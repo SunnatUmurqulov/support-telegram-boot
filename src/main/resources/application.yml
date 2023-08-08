@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/learning
+    username: postgres
+    password: 1234
+
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans=true:
+        temp:
+          use_jdbc_metadata_defaults: false
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyComponentPathImpl
+      ddl-auto: create
+
+    show-sql: true
+
+
+telegram:
+  bot-username: https://t.me/zeroone4bot
+  bot-token: 6044983688:AAFbj2YiwmJcT8l6IaaSVKEbEH9YKFuqrAo
